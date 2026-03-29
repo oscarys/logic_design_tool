@@ -1,0 +1,7 @@
+# Place screenshots here — referenced in README.md
+#
+# screenshot_combinational.png  — Combinational tab: truth table + VHDL preview
+# screenshot_sequential.png     — Sequential tab: ASM chart + VHDL preview
+# screenshot_simulation.png     — Simulation panel open with live timing diagram
+# screenshot_dark.png           — Dark mode
+# screenshot_timing_diagram.png — Exported timing diagram PNG

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SequentialWidget</class>
+ <widget class="QWidget" name="SequentialWidget">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>1260</width><height>760</height></rect>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="leftMargin"><number>6</number></property>
+   <property name="topMargin"><number>6</number></property>
+   <property name="rightMargin"><number>6</number></property>
+   <property name="bottomMargin"><number>6</number></property>
+   <property name="spacing"><number>6</number></property>
+
+   <!-- Top toolbar: entity / arch names only -->
+   <item>
+    <layout class="QHBoxLayout" name="toolbarLayout">
+     <item>
+      <widget class="QLabel" name="labelEntityName">
+       <property name="text"><string>Entity:</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEditEntityName">
+       <property name="placeholderText"><string>my_fsm</string></property>
+       <property name="maximumWidth"><number>180</number></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="labelArchName">
+       <property name="text"><string>Architecture:</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEditArchName">
+       <property name="placeholderText"><string>rtl</string></property>
+       <property name="maximumWidth"><number>140</number></property>
+      </widget>
+     </item>
+     <item>
+      <spacer>
+       <property name="orientation"><enum>Qt::Horizontal</enum></property>
+       <property name="sizeHint" stdset="0">
+        <size><width>40</width><height>20</height></size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+
+   <!-- Main splitter: left = toolbar+canvas, right = signals+preview -->
+   <item>
+    <widget class="QSplitter" name="splitterMain">
+     <property name="orientation"><enum>Qt::Horizontal</enum></property>
+     <property name="childrenCollapsible"><bool>false</bool></property>
+
+     <!-- Left panel: vertical icon toolbar + ASM canvas -->
+     <widget class="QWidget" name="canvasPanel">
+      <layout class="QHBoxLayout" name="canvasPanelLayout">
+       <property name="leftMargin"><number>0</number></property>
+       <property name="topMargin"><number>0</number></property>
+       <property name="rightMargin"><number>0</number></property>
+       <property name="bottomMargin"><number>0</number></property>
+       <property name="spacing"><number>0</number></property>
+
+       <!-- Vertical icon toolbar (promoted widget) -->
+       <item>
+        <widget class="AsmToolbar" name="asmToolbar" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+           <horstretch>0</horstretch><verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+
+       <!-- ASM canvas (promoted widget) -->
+       <item>
+        <widget class="ASMCanvasWidget" name="asmCanvasWidget" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>1</horstretch><verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+
+     <!-- Right panel: signal manager + VHDL preview -->
+     <widget class="QWidget" name="rightPanel">
+      <layout class="QVBoxLayout" name="rightLayout">
+       <property name="leftMargin"><number>0</number></property>
+       <property name="topMargin"><number>0</number></property>
+       <property name="rightMargin"><number>0</number></property>
+       <property name="bottomMargin"><number>0</number></property>
+
+       <!-- Signal manager -->
+       <item>
+        <widget class="QLabel" name="labelSignals">
+         <property name="text"><string>Signals</string></property>
+         <property name="styleSheet"><string>font-weight: bold; padding: 2px;</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="tableSignals">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch><verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumHeight"><number>140</number></property>
+         <property name="selectionBehavior"><enum>QAbstractItemView::SelectRows</enum></property>
+         <column><property name="text"><string>Name</string></property></column>
+         <column><property name="text"><string>Direction</string></property></column>
+         <column><property name="text"><string>Width</string></property></column>
+        </widget>
+       </item>
+
+       <!-- VHDL preview toolbar -->
+       <item>
+        <layout class="QHBoxLayout" name="previewToolbar">
+         <item>
+          <widget class="QLabel" name="labelPreview">
+           <property name="text"><string>VHDL Preview</string></property>
+           <property name="styleSheet"><string>font-weight: bold; padding: 2px;</string></property>
+          </widget>
+         </item>
+         <item>
+          <spacer>
+           <property name="orientation"><enum>Qt::Horizontal</enum></property>
+           <property name="sizeHint" stdset="0">
+            <size><width>40</width><height>20</height></size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnValidate">
+           <property name="text"><string>✔ Validate</string></property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnGenerate">
+           <property name="text"><string>⚡ Generate</string></property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnCopyVHDL">
+           <property name="text"><string>⎘ Copy</string></property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnSaveVHDL">
+           <property name="text"><string>💾 Save .vhd</string></property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnSimulate">
+           <property name="text"><string>⚙ Simulate</string></property>
+           <property name="checkable"><bool>true</bool></property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+
+       <!-- VHDL preview widget -->
+       <item>
+        <widget class="VHDLPreviewWidget" name="vhdlPreviewWidget" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch><verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+
+    </widget>
+   </item>
+
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AsmToolbar</class>
+   <extends>QWidget</extends>
+   <header>widgets.asm_toolbar</header>
+   <container>0</container>
+  </customwidget>
+  <customwidget>
+   <class>ASMCanvasWidget</class>
+   <extends>QWidget</extends>
+   <header>widgets.asm_canvas_widget</header>
+   <container>0</container>
+  </customwidget>
+  <customwidget>
+   <class>VHDLPreviewWidget</class>
+   <extends>QWidget</extends>
+   <header>widgets.vhdl_preview_widget</header>
+   <container>0</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,4 @@
+# Python >= 3.10 required (union type hints, structural pattern matching)
+PyQt6>=6.5.0
+# PyQt6-Qt6 is installed automatically as a dependency of PyQt6
+# QtSvg (QSvgRenderer) is included in the base PyQt6 package — no extra install needed

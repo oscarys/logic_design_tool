@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+MANIFEST
+
+# PyInstaller
+*.spec
+dist/
+build/
+
+# Unit test / coverage
+.coverage
+htmlcov/
+.pytest_cache/
+*.coveragerc
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Project files (user data — don't commit your own designs)
+*.vhdlt
+
+# Generated VHDL (also user data)
+*.vhd
+*.vhdl
+
+# Docs build
+docs/_build/

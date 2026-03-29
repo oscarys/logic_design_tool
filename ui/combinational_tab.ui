@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CombinationalWidget</class>
+ <widget class="QWidget" name="CombinationalWidget">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>1260</width><height>760</height></rect>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="leftMargin"><number>6</number></property>
+   <property name="topMargin"><number>6</number></property>
+   <property name="rightMargin"><number>6</number></property>
+   <property name="bottomMargin"><number>6</number></property>
+   <property name="spacing"><number>6</number></property>
+
+   <!-- Toolbar row -->
+   <item>
+    <layout class="QHBoxLayout" name="toolbarLayout">
+     <item>
+      <widget class="QLabel" name="labelEntityName">
+       <property name="text"><string>Entity:</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEditEntityName">
+       <property name="placeholderText"><string>my_combinational</string></property>
+       <property name="maximumWidth"><number>180</number></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="labelArchName">
+       <property name="text"><string>Architecture:</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEditArchName">
+       <property name="placeholderText"><string>rtl</string></property>
+       <property name="maximumWidth"><number>140</number></property>
+      </widget>
+     </item>
+     <item>
+      <spacer>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size><width>40</width><height>20</height></size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="labelDontCare">
+       <property name="text"><string>Output X generates:</string></property>
+       <property name="toolTip"><string>How output don't-care cells (X) are emitted in the VHDL when-else</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboDontCare">
+       <property name="minimumWidth"><number>210</number></property>
+       <property name="toolTip"><string>How output don't-care cells (X) are emitted in the VHDL when-else</string></property>
+       <item><property name="text"><string>'-'  (synthesiser choice)</string></property></item>
+       <item><property name="text"><string>'1'  (cover the minterm)</string></property></item>
+       <item><property name="text"><string>'0'  (don't cover)</string></property></item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+
+   <!-- Main splitter: left = table, right = VHDL preview -->
+   <item>
+    <widget class="QSplitter" name="splitterMain">
+     <property name="orientation"><enum>Qt::Horizontal</enum></property>
+     <property name="childrenCollapsible"><bool>false</bool></property>
+
+     <!-- Left panel: signal list + truth table -->
+     <widget class="QWidget" name="leftPanel">
+      <layout class="QVBoxLayout" name="leftLayout">
+       <property name="leftMargin"><number>0</number></property>
+   <property name="topMargin"><number>0</number></property>
+   <property name="rightMargin"><number>0</number></property>
+   <property name="bottomMargin"><number>0</number></property>
+       <item>
+        <widget class="QLabel" name="labelSignals">
+         <property name="text"><string>Signals</string></property>
+         <property name="styleSheet"><string>font-weight: bold; padding: 2px;</string></property>
+        </widget>
+       </item>
+       <item>
+        <!-- Signal manager table -->
+        <widget class="QTableWidget" name="tableSignals">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch><verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumHeight"><number>150</number></property>
+         <property name="selectionBehavior"><enum>QAbstractItemView::SelectRows</enum></property>
+         <property name="selectionMode"><enum>QAbstractItemView::ExtendedSelection</enum></property>
+         <column><property name="text"><string>Name</string></property></column>
+         <column><property name="text"><string>Direction</string></property></column>
+         <column><property name="text"><string>Width</string></property></column>
+         <column><property name="text"><string>Bus Group</string></property></column>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelTruthTable">
+         <property name="text"><string>Truth Table</string></property>
+         <property name="styleSheet"><string>font-weight: bold; padding: 2px;</string></property>
+        </widget>
+       </item>
+       <item>
+        <!-- Truth table: promoted widget -->
+        <widget class="TruthTableWidget" name="truthTableWidget" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch><verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+
+     <!-- Right panel: VHDL preview -->
+     <widget class="QWidget" name="rightPanel">
+      <layout class="QVBoxLayout" name="rightLayout">
+       <property name="leftMargin"><number>0</number></property>
+   <property name="topMargin"><number>0</number></property>
+   <property name="rightMargin"><number>0</number></property>
+   <property name="bottomMargin"><number>0</number></property>
+       <item>
+        <layout class="QHBoxLayout" name="previewToolbar">
+         <item>
+          <widget class="QLabel" name="labelPreview">
+           <property name="text"><string>VHDL Preview</string></property>
+           <property name="styleSheet"><string>font-weight: bold; padding: 2px;</string></property>
+          </widget>
+         </item>
+         <item>
+      <spacer>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size><width>40</width><height>20</height></size>
+       </property>
+      </spacer>
+     </item>
+         <item>
+          <widget class="QPushButton" name="btnGenerate">
+           <property name="text"><string>⚡ Generate</string></property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnCopyVHDL">
+           <property name="text"><string>⎘ Copy</string></property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnSaveVHDL">
+           <property name="text"><string>💾 Save .vhd</string></property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <!-- VHDL preview: promoted widget -->
+        <widget class="VHDLPreviewWidget" name="vhdlPreviewWidget" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch><verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+
+    </widget>
+   </item>
+
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TruthTableWidget</class>
+   <extends>QWidget</extends>
+   <header>widgets.truth_table_widget</header>
+   <container>0</container>
+  </customwidget>
+  <customwidget>
+   <class>VHDLPreviewWidget</class>
+   <extends>QWidget</extends>
+   <header>widgets.vhdl_preview_widget</header>
+   <container>0</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
