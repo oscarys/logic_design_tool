@@ -1,12 +1,20 @@
 # Logic Design Tool
 
-<img src="docs/uam_iztapalapa.png" alt="Universidad Autónoma Metropolitana, Unidad Iztapalapa" width="420"/>
+<img src="docs/logos_uami_ibero.png" alt="Universidad Autónoma Metropolitana, Unidad Iztapalapa; Universidad Iberoamericana, Campus CDMX" width="420"/>
 
 A free, open-source desktop application for digital design education. Draw combinational logic truth tables and Moore FSM ASM charts, generate correct VHDL-2008, simulate your design live, and export timing diagrams — all in one tool.
 
 Built with Python 3.10+ and PyQt6.
 
-**Author:** Oscar Yáñez Suárez — [Universidad Autónoma Metropolitana, Unidad Iztapalapa](https://www.izt.uam.mx)
+**Authors:** 
+
+Oscar Yáñez Suárez — [Universidad Autónoma Metropolitana, Unidad Iztapalapa](https://www.izt.uam.mx)
+Departamento de Ingeniería Eléctrica
+
+Erik René Bojorges Valdés — [Universidad Iberoamericana, Campus CDMX](https://www.ibero.mx)
+Departamento de Estudios en Ingeniería para la Innovación
+
+Omar Piña Ramírez — [Universidad Autónoma Metropolitana, Unidad Iztapalapa](https://www.izt.uam.mx)
 Departamento de Ingeniería Eléctrica
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
