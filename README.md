@@ -1,8 +1,17 @@
 # VHDL Design Tool
 
+<img src="docs/uam_iztapalapa.png" alt="Universidad Autónoma Metropolitana, Unidad Iztapalapa" width="420"/>
+
 A free, open-source desktop application for digital design education. Draw combinational logic truth tables and Moore FSM ASM charts, generate correct VHDL-2008, simulate your design live, and export timing diagrams — all in one tool.
 
 Built with Python 3.10+ and PyQt6.
+
+**Author:** Oscar Yáñez Suárez — [Universidad Autónoma Metropolitana, Unidad Iztapalapa](https://www.izt.uam.mx)
+Departamento de Ingeniería Eléctrica
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![PyQt6](https://img.shields.io/badge/PyQt6-6.4%2B-green)
 
 ---
 

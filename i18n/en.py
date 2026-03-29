@@ -77,7 +77,10 @@ STRINGS = {
         "<b>VHDL Design Tool</b><br>"
         "Combinational and Moore FSM digital design tool.<br>"
         "Generates VHDL-2008 from truth tables and ASM charts.<br><br>"
-        "Project files use the <tt>.vhdlt</tt> format (JSON)."
+        "<b>Author:</b> Oscar Yáñez Suárez<br>"
+        "Universidad Autónoma Metropolitana, Unidad Iztapalapa<br><br>"
+        "Project files use the <tt>.vhdlt</tt> format (JSON).<br>"
+        "Licensed under the GNU General Public License v3.0."
     ),
 
     # ── Dialogs: add transition ───────────────────────────────────────── #

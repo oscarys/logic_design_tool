@@ -26,4 +26,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Live timing diagram** — logic-analyzer style waveform updates in real time
 - **Timing diagram PNG export**
 - **Dark mode** — instant toggle, persisted via QSettings
+- **Author** — Oscar Yáñez Suárez, Universidad Autónoma Metropolitana, Unidad Iztapalapa
 - **License** — GNU General Public License v3.0

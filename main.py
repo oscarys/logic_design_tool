@@ -1,5 +1,6 @@
 # VHDL Design Tool
-# Copyright (C) 2025 VHDL Design Tool Contributors
+# Copyright (C) 2025 Oscar Yáñez Suárez
+# Universidad Autónoma Metropolitana, Unidad Iztapalapa
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
