@@ -1,4 +1,4 @@
-# VHDL Design Tool
+# Logic Design Tool
 
 <img src="docs/uam_iztapalapa.png" alt="Universidad Autónoma Metropolitana, Unidad Iztapalapa" width="420"/>
 
